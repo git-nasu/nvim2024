@@ -3,11 +3,10 @@ local keymap = vim.keymap
 local opts = { noremap = true, silent = true }
 local term_opt = { silent = true }
 
-
 -- Rename space as leader
-keymap.set('', '<Space>', '<Nop>', opts)
-vim.g.mapleader = ' '
-vim.g.localmapleader = ' '
+keymap.set("", "<Space>", "<Nop>", opts)
+vim.g.mapleader = " "
+vim.g.localmapleader = " "
 
 -- Modes
 -- normal_mode 'n'
@@ -16,61 +15,59 @@ vim.g.localmapleader = ' '
 -- term_mode 't'
 -- command_mode 'c'
 
-
 -- Do not yank with x
-keymap.set('n', 'x', '"_x')
+keymap.set("n", "x", '"_x')
 
 -- No hlsearch
-keymap.set('n', '<Esc><Esc>', ':nohlsearch<CR>', opts)
+keymap.set("n", "<Esc><Esc>", ":nohlsearch<CR>", opts)
 
 -- Exit insert mode
-keymap.set('i', 'jj', '<Esc>',opts)
+keymap.set("i", "jj", "<Esc>", opts)
 
 --Increment/Decrement
-keymap.set('n', '+', '<C-a>')
-keymap.set('n', '-', '<C-x>')
+keymap.set("n", "+", "<C-a>")
+keymap.set("n", "-", "<C-x>")
 
 --Delete a word backward
-keymap.set('n', 'dw', 'vb"_d')
+keymap.set("n", "dw", 'vb"_d')
 
 --Select all
-keymap.set('n', '<C-a>', 'gg<S-v>G', opts)
+keymap.set("n", "<C-a>", "gg<S-v>G", opts)
 
 --New tab
-keymap.set('n', 'te', ':tabedit')
+keymap.set("n", "te", ":tabedit")
 
 --End of line yanked
-keymap.set('n', 'Y', 'y$', opts)
+keymap.set("n", "Y", "y$", opts)
 
 --Split window
-keymap.set('n', 'ss', ':split<Return><C-w>w')
-keymap.set('n', 'sv', ':vsplit<Return><C-w>w')
+keymap.set("n", "ss", ":split<Return><C-w>w")
+keymap.set("n", "sv", ":vsplit<Return><C-w>w")
 
 --Move window
-keymap.set('n', '<Space>', '<C-w>w')
-keymap.set('', 'sh', '<C-w>h', opts)
-keymap.set('', 'sj', '<C-w>j', opts)
-keymap.set('', 'sk', '<C-w>k', opts)
-keymap.set('', 'sl', '<C-w>l', opts)
+keymap.set("n", "<Space>", "<C-w>w")
+keymap.set("", "sh", "<C-w>h", opts)
+keymap.set("", "sj", "<C-w>j", opts)
+keymap.set("", "sk", "<C-w>k", opts)
+keymap.set("", "sl", "<C-w>l", opts)
 
 --Resize window
-keymap.set('n', '<C-w><left>', '<C-w><')
-keymap.set('n', '<C-w><right>', '<C-w>>')
-keymap.set('n', '<C-w><up>', '<C-w>+')
-keymap.set('n', '<C-w><down>', '<C-w>-')
+keymap.set("n", "<C-w><left>", "<C-w><")
+keymap.set("n", "<C-w><right>", "<C-w>>")
+keymap.set("n", "<C-w><up>", "<C-w>+")
+keymap.set("n", "<C-w><down>", "<C-w>-")
 
 -- Visual
-keymap.set('v', '<', '<gt', opts)
-keymap.set('v', '>', '>gt', opts)
+keymap.set("v", "<", "<gt", opts)
+keymap.set("v", ">", ">gt", opts)
 
 -- Select end of line on visual mode
-keymap.set('v', 'v', '$h', opts)
+keymap.set("v", "v", "$h", opts)
 
 -- Exit visual mode
-keymap.set('v', 'vv', '<Esc>', opts)
+keymap.set("v", "vv", "<Esc>", opts)
 
 --Move text up and down
-keymap.set('v', '<A-j>', ':m .+1<CR>==', opts)
-keymap.set('v', '<A-k>', ':m .-2<CR>==', opts)
-keymap.set('v', 'p', '"_dp', opts)
-
+keymap.set("v", "<A-j>", ":m .+1<CR>==", opts)
+keymap.set("v", "<A-k>", ":m .-2<CR>==", opts)
+keymap.set("v", "p", '"_dp', opts)

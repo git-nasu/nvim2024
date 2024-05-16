@@ -1,10 +1,3 @@
--- =============================================================================
--- URL: https://github.com/sainnhe/sonokai
--- Filename: lua/lualine/themes/sonokai.lua
--- Author: sainnhe
--- Email: i@sainnhe.dev
--- License: MIT License
--- =============================================================================
 return {
   "nvim-lualine/lualine.nvim",
   dependencies = { "nvim-tree/nvim-web-devicons" },
@@ -12,51 +5,51 @@ return {
     local lualine = require("lualine")
     local lazy_status = require("lazy.status") -- to configure lazy pending updates count
 
-    local configuration = vim.fn["sonokai#get_configuration"]()
-    local palette = vim.fn["sonokai#get_palette"](configuration.style, configuration.colors_override)
-
-    if configuration.transparent_background == 2 then
-      palette.bg1 = palette.none
-    end
+    local colors = {
+      blue = "#65D1FF",
+      green = "#3EFFDC",
+      violet = "#FF61EF",
+      yellow = "#FFDA7B",
+      red = "#FF4A4A",
+      fg = "#c3ccdc",
+      bg = "#112638",
+      inactive_bg = "#2c3043",
+    }
 
     local my_lualine_theme = {
       normal = {
-        a = { bg = palette.bg_blue[1], fg = palette.bg0[1], gui = "bold" },
-        b = { bg = palette.bg4[1], fg = palette.fg[1] },
-        c = { bg = palette.bg1[1], fg = palette.fg[1] },
+        a = { bg = colors.blue, fg = colors.bg, gui = "bold" },
+        b = { bg = colors.bg, fg = colors.fg },
+        c = { bg = colors.bg, fg = colors.fg },
       },
       insert = {
-        a = { bg = palette.bg_green[1], fg = palette.bg0[1], gui = "bold" },
-        b = { bg = palette.bg4[1], fg = palette.fg[1] },
-        c = { bg = palette.bg1[1], fg = palette.fg[1] },
+        a = { bg = colors.green, fg = colors.bg, gui = "bold" },
+        b = { bg = colors.bg, fg = colors.fg },
+        c = { bg = colors.bg, fg = colors.fg },
       },
       visual = {
-        a = { bg = palette.bg_red[1], fg = palette.bg0[1], gui = "bold" },
-        b = { bg = palette.bg4[1], fg = palette.fg[1] },
-        c = { bg = palette.bg1[1], fg = palette.fg[1] },
-      },
-      replace = {
-        a = { bg = palette.orange[1], fg = palette.bg0[1], gui = "bold" },
-        b = { bg = palette.bg4[1], fg = palette.fg[1] },
-        c = { bg = palette.bg1[1], fg = palette.fg[1] },
+        a = { bg = colors.violet, fg = colors.bg, gui = "bold" },
+        b = { bg = colors.bg, fg = colors.fg },
+        c = { bg = colors.bg, fg = colors.fg },
       },
       command = {
-        a = { bg = palette.yellow[1], fg = palette.bg0[1], gui = "bold" },
-        b = { bg = palette.bg4[1], fg = palette.fg[1] },
-        c = { bg = palette.bg1[1], fg = palette.fg[1] },
+        a = { bg = colors.yellow, fg = colors.bg, gui = "bold" },
+        b = { bg = colors.bg, fg = colors.fg },
+        c = { bg = colors.bg, fg = colors.fg },
       },
-      terminal = {
-        a = { bg = palette.purple[1], fg = palette.bg0[1], gui = "bold" },
-        b = { bg = palette.bg3[1], fg = palette.fg[1] },
-        c = { bg = palette.bg1[1], fg = palette.fg[1] },
+      replace = {
+        a = { bg = colors.red, fg = colors.bg, gui = "bold" },
+        b = { bg = colors.bg, fg = colors.fg },
+        c = { bg = colors.bg, fg = colors.fg },
       },
       inactive = {
-        a = { bg = palette.bg1[1], fg = palette.grey[1] },
-        b = { bg = palette.bg1[1], fg = palette.grey[1] },
-        c = { bg = palette.bg1[1], fg = palette.grey[1] },
+        a = { bg = colors.inactive_bg, fg = colors.semilightgray, gui = "bold" },
+        b = { bg = colors.inactive_bg, fg = colors.semilightgray },
+        c = { bg = colors.inactive_bg, fg = colors.semilightgray },
       },
     }
 
+    -- configure lualine with modified theme
     lualine.setup({
       options = {
         theme = my_lualine_theme,
