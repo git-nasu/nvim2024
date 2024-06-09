@@ -28,6 +28,7 @@ vim.opt.autoindent = true
 vim.opt.smartindent = true
 vim.opt.shiftwidth = 2
 vim.opt.tabstop = 2
+vim.opt.expandtab = true
 vim.opt.hidden = true
 vim.opt.wildignore:append({ "*/node_modules/*" })
 vim.opt.clipboard:append({ "unnamedplus" })
