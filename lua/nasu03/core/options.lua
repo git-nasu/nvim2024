@@ -37,7 +37,7 @@ vim.opt.clipboard:append({ "unnamedplus" })
 
 vim.opt.cursorline = true
 vim.opt.termguicolors = true
-vim.opt.winblend = 5
-vim.opt.pumblend = 5
+vim.opt.winblend = 3
+vim.opt.pumblend = 3
 vim.opt.background = "dark"
 vim.opt.wildoptions = "pum"
