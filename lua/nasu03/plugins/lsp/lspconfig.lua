@@ -79,8 +79,16 @@ return {
     end
 
     mason_lspconfig.setup_handlers({
-      -- default handler for installed servers
+      -- server_name tsserver is deprecated, use "ts_ls"  instead (2024/09/06)
       function(server_name)
+        if server_name == "tsserver" then
+          server_name = "ts_ls"
+        end
+        local capabilities = require("cmp_nvim_lsp").default_capabilities()
+        require("lspconfig")[server_name].setup({
+          capabilities = capabilities,
+        })
+
         lspconfig[server_name].setup({
           capabilities = capabilities,
         })
